@@ -1,0 +1,105 @@
+<script>
+  import nanoid from "nanoid";
+  import { slide } from "svelte/transition";
+  import { bounceInOut } from "svelte/easing";
+
+  // props
+  export let transitionDuration = 200;
+  export let headingLevel = 1;
+  export let items = [];
+  export let id = nanoid(5);
+
+  // state
+  let itemStatus = items.map(item => item.defaultOpen);
+
+  // ref to DOM Node
+  let headerElements = [];
+
+  function focusNext(i) {
+    const order = i + 1 >= headerElements.length ? 0 : i + 1;
+    headerElements[order].focus();
+  }
+
+  function focusPrev(i) {
+    const order = i === 0 ? headerElements.length - 1 : i - 1;
+    headerElements[order].focus();
+  }
+
+  function updateStatus(i) {
+    itemStatus = itemStatus.map((item, j) => {
+      return i === j ? true : false;
+    });
+  }
+
+  function handleClick(e, i) {
+    updateStatus(i);
+  }
+
+  function handleKeyup(code, i) {
+    switch (code) {
+      case "Enter":
+      case "Space":
+        updateStatus(i);
+        break;
+      case "ArrowRight":
+      case "ArrowDown":
+        focusNext(i);
+        break;
+      case "ArrowLeft":
+      case "ArrowUp":
+        focusPrev(i);
+        break;
+      case "Home":
+        headerElements[0].focus();
+        break;
+      case "End":
+        headerElements[headerElements.length - 1].focus();
+        break;
+      default:
+        break;
+    }
+  }
+</script>
+
+<style>
+  .wasp-Accordion__button {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<div class="wasp-Accordion">
+  {#each items as item, i}
+    <div class="wasp-Accordion__item">
+      <div
+        class="wasp-Accordion__header"
+        role="heading"
+        aria-level={headingLevel}>
+        <div
+          class="wasp-Accordion__button"
+          tabindex="0"
+          role="button"
+          aria-disabled={itemStatus[i]}
+          aria-expanded={itemStatus[i]}
+          aria-controls={`wasp-${id}-panel-${i}`}
+          on:keyup={e => handleKeyup(e.code, i)}
+          on:click={e => handleClick(e, i)}
+          bind:this={headerElements[i]}>
+          {@html item.header}
+        </div>
+      </div>
+      <div
+        class="wasp-Accordion__panel"
+        aria-hidden={!itemStatus[i]}
+        id={`wasp-${id}-panel-${i}`}>
+        {#if itemStatus[i]}
+          <div
+            transition:slide|local={{ duration: transitionDuration, easing: bounceInOut }}>
+            {@html item.panel}
+          </div>
+        {/if}
+      </div>
+    </div>
+  {/each}
+</div>
