@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "start-storybook -p 9000",
-    "build:static": "build-storybook",
+    "build:static": "build-storybook --quiet",
     "scaffold": "scaffdog generate"
   }
 }
