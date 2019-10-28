@@ -2,9 +2,6 @@
   "name": "wai-aria-svelte-practices",
   "version": "1.0.0",
   "dependencies": {
-    "@storybook/addon-actions": "^5.2.5",
-    "@storybook/addon-links": "^5.2.5",
-    "@storybook/addons": "^5.2.5",
     "@storybook/svelte": "^5.2.5",
     "nanoid": "^2.1.6",
     "svelte": "^3.12.1"
