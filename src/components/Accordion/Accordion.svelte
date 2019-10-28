@@ -1,7 +1,7 @@
 <script>
   import nanoid from "nanoid";
   import { slide } from "svelte/transition";
-  import { bounceInOut } from "svelte/easing";
+  import { sineIn, sineOut } from "svelte/easing";
 
   // props
   export let transitionDuration = 200;
@@ -95,7 +95,8 @@
         id={`wasp-${id}-panel-${i}`}>
         {#if itemStatus[i]}
           <div
-            transition:slide|local={{ duration: transitionDuration, easing: bounceInOut }}>
+            in:slide|local={{ duration: transitionDuration, easing: sineIn }}
+            out:slide|local={{ duration: transitionDuration, easing: sineOut }}>
             {@html item.panel}
           </div>
         {/if}
