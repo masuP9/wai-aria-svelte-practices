@@ -2,14 +2,10 @@ import Button from "./Button.view.svelte";
 
 export default { title: "Button" };
 
-function onClick(event) {
-  alert(event.type);
-}
-
 export const overview = () => ({
   Component: Button,
   props: {
-    onClick,
+    onClick: e => alert(event.type),
     className: "Button"
   }
 });
@@ -18,7 +14,6 @@ export const toggle = () => ({
   Component: Button,
   props: {
     toggle: true,
-    onClick,
-    className: "toggleButton"
+    buttonText: "toggle Button"
   }
 });
