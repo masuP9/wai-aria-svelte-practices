@@ -4,7 +4,8 @@
   import { sineIn, sineOut } from "svelte/easing";
 
   // props
-  export let transitionDuration = 200;
+  export let className = "";
+  export let transitionDuration = 150;
   export let headingLevel = 1;
   export let items = [];
   export let id = nanoid(5);
@@ -62,10 +63,25 @@
 </script>
 
 <style>
+  .wasp-Accordion__item {
+    border: 1px solid #757575;
+  }
+
+  .wasp-Accordion__item:not(:first-child) {
+    border-top-width: 0;
+  }
   .wasp-Accordion__button {
+    box-sizing: border-box;
     min-height: 44px;
-    display: flex;
-    align-items: center;
+    padding: 12px;
+  }
+
+  .wasp-Accordion__button[aria-disabled="true"] {
+    background-color: #eeeeee;
+  }
+
+  .wasp-Accordion__panel:not(:empty) {
+    padding: 12px;
   }
 </style>
 
