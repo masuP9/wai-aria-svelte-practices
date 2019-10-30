@@ -3,12 +3,14 @@
   export let className = "";
   export let toggle = false;
   export let onClick = () => {};
+  export let ref;
 
   // state
   let pressed = false;
   let {
     onClick: _onClick,
     toggle: _toggle,
+    ref: _ref,
     tabindex,
     $$scope: _scope,
     $$slots: _slots,
@@ -64,6 +66,7 @@
   class={`${className} wasp-Button`}
   aria-pressed={toggle ? pressed : null}
   on:keyup={handleKeyup}
-  on:click={handleClick}>
+  on:click={handleClick}
+  bind:this={ref}>
   <slot />
 </span>
