@@ -2,15 +2,15 @@
   "name": "wai-aria-svelte-practices",
   "version": "1.0.0",
   "dependencies": {
-    "@storybook/svelte": "^5.2.5",
+    "@storybook/svelte": "^5.2.8",
     "focus-trap": "^5.1.0",
-    "nanoid": "^2.1.6",
+    "nanoid": "^2.1.8",
     "no-scroll": "^2.1.1",
-    "svelte": "^3.12.1",
+    "svelte": "^3.16.4",
     "wicg-inert": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.7.5",
     "babel-loader": "^8.0.6",
     "scaffdog": "^0.1.2",
     "svelte-loader": "^2.13.6"
