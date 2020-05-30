@@ -1,5 +1,5 @@
 <script>
-  import nanoid from "nanoid";
+  import { nanoid } from "nanoid";
   import { slide } from "svelte/transition";
   import { sineIn, sineOut } from "svelte/easing";
 
