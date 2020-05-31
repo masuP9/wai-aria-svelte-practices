@@ -13,7 +13,7 @@
 
 <Button onClick={e => (open = !open)} toggle>Trigger Alert</Button>
 <div />
-<Alert>
+<Alert {...$$restProps}>
   {#if open}
     <p>
       <span lang="da">Hej</span>

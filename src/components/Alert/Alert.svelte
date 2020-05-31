@@ -1,8 +1,3 @@
-<script>
-  // props
-  let { $$scope: _scope, $$slots: _slots, ...DOMProps } = $$props;
-</script>
-
 <style>
   :not(:empty) {
     padding: 12px;
@@ -11,6 +6,6 @@
   }
 </style>
 
-<div role="alert" aria-live="assertive" {...DOMProps}>
+<div {...$$restProps} role="alert" aria-live="assertive">
   <slot />
 </div>

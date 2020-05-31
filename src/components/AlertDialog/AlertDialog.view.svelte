@@ -50,7 +50,7 @@
   </div>
 </form>
 <AlertDialog
-  {...$$props}
+  {...$$restProps}
   {open}
   requestClose={close}
   initialFocus={initialFocusRef}

@@ -21,7 +21,7 @@ ignore: []
   span {
   }
 </style>
-<span></span>
+<span {...$$restProps}></span>
 ```
 
 # `{{ input }}/{{ input }}.view.svelte`

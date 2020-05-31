@@ -7,15 +7,7 @@
 
   // state
   let pressed = false;
-  let {
-    onClick: _onClick,
-    toggle: _toggle,
-    ref: _ref,
-    tabindex,
-    $$scope: _scope,
-    $$slots: _slots,
-    ...DOMProps
-  } = $$props;
+  let { tabindex, role } = $$props;
 
   function handleKeyup(event) {
     if (event.code === "Enter" || event.code === "Space") {
@@ -60,7 +52,7 @@
 </style>
 
 <span
-  {...DOMProps}
+  {...$$restProps}
   role="button"
   tabindex={tabindex != null ? tabindex : '0'}
   class={`${className} wasp-Button`}
