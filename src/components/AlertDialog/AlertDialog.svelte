@@ -107,6 +107,7 @@
 
 {#if open}
   <div
+    {...$$restProps}
     class="wasp-AlertDialog"
     transition:fade={{ duration }}
     on:introend={handleIntroEnd}

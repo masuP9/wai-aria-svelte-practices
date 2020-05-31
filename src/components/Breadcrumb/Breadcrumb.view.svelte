@@ -2,4 +2,4 @@
   import Breadcrumb from "./Breadcrumb";
 </script>
 
-<Breadcrumb {...$$props} />
+<Breadcrumb {...$$restProps} />

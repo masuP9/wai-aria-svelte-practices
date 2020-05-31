@@ -2,7 +2,7 @@
   import Button from "./Button";
 
   export let buttonText = "button";
-  const { buttonText: text, ...rest } = $$props;
+  const { buttonText: text } = $$props;
 </script>
 
-<Button {...rest}>{buttonText}</Button>
+<Button {...$$restProps}>{buttonText}</Button>

@@ -4,5 +4,5 @@ export default { title: "Alert" };
 
 export const overview = () => ({
   Component: Alert,
-  props: {}
+  props: {},
 });

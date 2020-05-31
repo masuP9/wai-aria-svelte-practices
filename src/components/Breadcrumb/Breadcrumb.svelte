@@ -23,7 +23,7 @@
 </style>
 
 {#if items != null}
-  <nav aria-label={label} class="wasp-BreadCrumb">
+  <nav {...$$restProps} aria-label={label} class="wasp-BreadCrumb">
     <ol class="wasp-BreadCrumb__list">
       {#each items as item, i}
         <li class="wasp-BreadCrumb__item">
