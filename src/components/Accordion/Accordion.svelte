@@ -4,7 +4,6 @@
   import { sineIn, sineOut } from "svelte/easing";
 
   // props
-  export let className = "";
   export let transitionDuration = 150;
   export let headingLevel = 1;
   export let items = [];
