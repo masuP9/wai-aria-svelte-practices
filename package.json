@@ -4,7 +4,7 @@
   "dependencies": {
     "@storybook/svelte": "^5.3.19",
     "focus-trap": "^5.1.0",
-    "nanoid": "^3.1.9",
+    "nanoid": "^3.1.31",
     "no-scroll": "^2.1.1",
     "svelte": "^3.23.0",
     "wicg-inert": "^3.0.3"
